@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Usuwanie rekordu</title>
+</head>
+<body>
+    <div>
+        <h3>Czy chcesz usunąć osobę:</h3>
+        <div>
+            <p>
+                <span th:text="${person.firstName}"></span> 
+                <span th:text="${person.lastName}"></span>
+            </p>
+            <p>
+                <span th:text="${person.city}"></span> 
+            </p>
+        </div>
+        <div>
+            <a th:href="@{/person/del?id={id}&action={action}(id=${person.id}, action=true) }"><button> Tak </button></a>
+            <a th:href="@{/person/list}"><button> Nie </button></a>
+        </div>
+    </div>
+</body>
+</html>
