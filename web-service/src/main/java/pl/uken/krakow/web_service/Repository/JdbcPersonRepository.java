@@ -64,7 +64,4 @@ public class JdbcPersonRepository implements PersonRepository {
                 rs.getTimestamp("updated_at").toLocalDateTime()
             ));
     }
-
-
-    
 }

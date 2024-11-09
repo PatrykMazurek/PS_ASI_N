@@ -9,7 +9,13 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.client.RestTemplate;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.JsonMappingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
+import pl.uken.krakow.web_service.Model.Member;
 import pl.uken.krakow.web_service.Model.Person;
 import pl.uken.krakow.web_service.Repository.PersonRepository;
 
@@ -58,5 +64,26 @@ public class PersonController {
         }
         model.addAttribute("person", personRepository.getPerson(id));
         return "del_person";
+    }
+
+    @GetMapping("/poslowie")
+    public String poslowieView(Model model){
+        String url = "https://api.sejm.gov.pl/sejm/term10/MP";
+        RestTemplate rest = new RestTemplate();
+        String result = rest.getForObject(url, String.class);
+        ObjectMapper mapper = new ObjectMapper();
+        Member[] members = null;
+        try {
+            members = mapper.readValue(result, Member[].class);
+            System.out.println(members[0].getClub());
+        } catch (JsonMappingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (JsonProcessingException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        model.addAttribute("members", members);
+        return "list_poslowie";
     }
 }

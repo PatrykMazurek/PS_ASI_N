@@ -4,7 +4,6 @@ import java.time.LocalDateTime;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatusCode;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -40,9 +39,9 @@ public class RestController {
         person.setUpdated_at(LocalDateTime.now());
         Person p = restService.savePerson(person);
         if (p != null){
-            return new ResponseEntity<>(HttpStatusCode.valueOf(200));
+            return ResponseEntity.ok().body("akcept");
         }else{
-            return new ResponseEntity<>(HttpStatusCode.valueOf(400));
+            return ResponseEntity.ok().body("not akcept");
         }
     }
 }
