@@ -16,7 +16,7 @@ public class JdbcPersonRepository implements PersonRepository {
 
     @Override
     public int countPerson() {
-        return jdbc.queryForObject("SELECT COUNT(8) FROM person", Integer.class);
+        return jdbc.queryForObject("SELECT COUNT(*) FROM person", Integer.class);
     }
 
     @Override

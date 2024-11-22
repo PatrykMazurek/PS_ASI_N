@@ -73,6 +73,7 @@ public class PersonController {
         String result = rest.getForObject(url, String.class);
         ObjectMapper mapper = new ObjectMapper();
         Member[] members = null;
+        System.out.println(result);
         try {
             members = mapper.readValue(result, Member[].class);
             System.out.println(members[0].getClub());

@@ -11,25 +11,24 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class Member {
-
-    String accusativeName; 
+    int id;
+    String firstName;
+    String secondName;
+    String lastName;
+    String firstLastName;
+    String lastFirstName;
+    String accusativeName;
+    String genitiveName;
     boolean active;
+    String email;
+    String club;
     String birthDate;
     String birthLocation;
-    String club;
+    String profession;
     String districtName;
     int districtNum;
     String educationLevel;
-    String email;
-    String firstLastName;
-    String firstName;
-    String genitiveName;
-    int id;
-    String lastFirstName;
-    String lastName;
     int numberOfVotes;
-    String profession;
-    String secondName;
     String voivodeship;
     
 }

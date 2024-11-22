@@ -1,4 +1,4 @@
-package pl.uken.krakow.rest_service;
+package pl.krakow.uken.gateway_service;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -6,10 +6,9 @@ import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 @SpringBootApplication
 @EnableDiscoveryClient
-public class RestServiceApplication {
-
+public class GatewayServiceApplication {
 	public static void main(String[] args) {
-		SpringApplication.run(RestServiceApplication.class, args);
+		SpringApplication.run(GatewayServiceApplication.class, args);
 	}
 
 }
