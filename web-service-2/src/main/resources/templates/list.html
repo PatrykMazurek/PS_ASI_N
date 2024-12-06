@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pl" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>lista osób</title>
+</head>
+<body>
+    <div>
+        <h3>List osób</h3>
+    </div>
+    <div>
+        <button> Dodaj nową osobę </button>
+    </div>
+    <div>
+        <table>
+            <tr>
+                <th>Imię</th>
+                <th>Nazwisko</th>
+                <th>Wiek</th>
+                <th>Miasto</th>
+                <th></th>
+                <th></th>
+            </tr>
+            <tr th:each="person : ${persons}">
+                <td th:text="${person.firstName}"></td>
+                <td th:text="${person.lastName}"></td>
+                <td th:text="${person.age}"></td>
+                <td th:text="${person.city}"></td>
+                <td><button>Edytuj</button></td>
+                <td><a th:href="@{/person/del?id={id}(id=${person.id})}"><button>Usuń</button></a></td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>

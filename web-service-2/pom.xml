@@ -9,9 +9,9 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>pl.krakow.uken</groupId>
-	<artifactId>web-service</artifactId>
+	<artifactId>web-service-2</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>web-service</name>
+	<name>web-service-2</name>
 	<description>Demo project for Spring Boot</description>
 	<url/>
 	<licenses>
