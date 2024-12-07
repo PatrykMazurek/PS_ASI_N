@@ -6,5 +6,5 @@ import pl.krakow.uken.rest_service.model.Person;
 
 public interface RestPersonRepository extends JpaRepository<Person, Long> {
 
-    boolean checkPersonByToken(String token);
+    // boolean checkPersonByToken(String token);
 }

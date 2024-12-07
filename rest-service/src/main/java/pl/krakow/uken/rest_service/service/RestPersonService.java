@@ -1,12 +1,12 @@
-package pl.uken.krakow.rest_service.Service;
+package pl.krakow.uken.rest_service.service;
 
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import pl.uken.krakow.rest_service.Model.Person;
-import pl.uken.krakow.rest_service.Repository.RestPersonRepository;
+import pl.krakow.uken.rest_service.model.Person;
+import pl.krakow.uken.rest_service.repository.RestPersonRepository;
 
 @Service
 public class RestPersonService {
@@ -28,7 +28,13 @@ public class RestPersonService {
     }
 
     public boolean findPerson(String token){
-        return repository.checkPersonByToken(token);
+        // return repository.checkPersonByToken(token);
+        throw new UnsupportedOperationException("Unimplemented method 'checkPersonByToken'");
+    }
+
+    public boolean checkPersonByToken(String key) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'checkPersonByToken'");
     }
     
 }
